@@ -1,4 +1,4 @@
-package oop.labor02.BankAccount;
+package oop.labor02.bankaccount;
 
 public class Main {
     public static void main(String[] args){
