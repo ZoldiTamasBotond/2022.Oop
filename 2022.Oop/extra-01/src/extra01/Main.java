@@ -1,24 +1,24 @@
-package extra;
+package extra01;
 
 import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
 
-    public static int BinarySearch2(int array[], int l, int r, int number)
+    public static int binarySearch2(int array[], int l, int r, int number)
     {
         if (r >= l) {
             if (array[l + (r - l) / 2] == number)
                 return l + (r - l) / 2;
             if (array[l + (r - l) / 2] > number)
-                return BinarySearch2(array, l, l + (r - l) / 2 - 1, number);
-            return BinarySearch2(array, l + (r - l) / 2 + 1, r, number);
+                return binarySearch2(array, l, l + (r - l) / 2 - 1, number);
+            return binarySearch2(array, l + (r - l) / 2 + 1, r, number);
         }
         return -1;
     }
 
 
-    public static int BinarySearch(int array[],int r,int number)
+    public static int binarySearch(int array[],int r,int number)
     {
         int l=0;
         while(r>=l)
@@ -40,15 +40,15 @@ public class Main {
 
 
 
-        public static int Random () {
+        public static int Random (int n) {
             Random rand = new Random();
             int counter = 0;
-            int[] x = new int[1000000];
-            for (int i = 0; i < 1000000; i++) {
+            int[] x = new int[n];
+            for (int i = 0; i < n; i++) {
                 x[i] = rand.nextInt();
             }
             Arrays.sort(x);
-            for (int i = 0; i < 1000000 - 1; i++) {
+            for (int i = 0; i < n - 1; i++) {
                 if (x[i] == x[i + 1]) {
                     counter++;
                 }
@@ -57,15 +57,18 @@ public class Main {
         }
 
     public static void main(String[] args) {
-        System.out.println(Random());
+
         Random rand = new Random();
-        int[] a = new int[1000000];
-        for (int i = 0; i < 1000000; i++) {
-            a[i] = rand.nextInt(0, 1000000);
+        int n=1000000;
+        int num=88;
+        System.out.println(Random(n));
+        int[] a = new int[n];
+        for (int i = 0; i < n; i++) {
+            a[i] = rand.nextInt(0, n);
         }
         Arrays.sort(a);
-        System.out.println(Arrays.binarySearch(a, 88));
-        System.out.println(BinarySearch(a, 1000000 - 1, 88));
-        System.out.println(BinarySearch2(a, 0, 1000000 - 1, 88));
+        System.out.println(Arrays.binarySearch(a, num));
+        System.out.println(binarySearch(a, n - 1, num));
+        System.out.println(binarySearch2(a, 0, n - 1, num));
     }
 }

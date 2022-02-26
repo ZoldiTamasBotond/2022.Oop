@@ -16,6 +16,20 @@ public class Main {
         }
 
         System.out.println(account1.getAccountNumber()+": "+account1.getBalance());
+        boolean result2 = account1.withdraw(1000);
+        if ( !result2 ){
+            System.out.println("You do not have sufficient funds for this operation!");
+        }
+
+        System.out.println(account1.getAccountNumber()+": "+account1.getBalance());
+
+        BankAccount account2 = new BankAccount("OTP00002");
+
+        System.out.println(account2.getAccountNumber()+": "+account2.getBalance());
+
+        account2.deposit(2000);
+
+        System.out.println(account2.getAccountNumber()+": "+account2.getBalance());
 
     }
 }
