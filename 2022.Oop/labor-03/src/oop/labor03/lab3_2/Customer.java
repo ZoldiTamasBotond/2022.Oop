@@ -32,7 +32,7 @@ public class Customer {
     public BankAccount getAccount(String accountNumber) {
         for (int i=0;i<numAccounts;i++)
         {
-            if (this.accounts[i].equals(accountNumber)) {
+            if (this.accounts[i].getAccountNumber().equals(accountNumber)) {
                 return accounts[i];
             }
         }
@@ -52,7 +52,7 @@ public class Customer {
     public void closeAccount(String accountNumber){
         for (int i=0;i<numAccounts;i++)
         {
-            if (this.accounts[i].equals(accountNumber)) {
+            if (this.accounts[i].getAccountNumber().equals(accountNumber)) {
                 numAccounts--;
                 accounts[i]=accounts[numAccounts];
 
