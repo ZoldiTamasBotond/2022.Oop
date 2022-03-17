@@ -24,6 +24,6 @@ public class MyDate {
     }
 
     public String toString(){
-        return year+". "+month+". "+day+".";
+        return year+". "+month+". "+day;
     }
 }
