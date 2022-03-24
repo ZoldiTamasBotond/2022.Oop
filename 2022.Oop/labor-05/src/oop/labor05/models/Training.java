@@ -26,7 +26,7 @@ public class Training {
     }
 
     public boolean enroll(Student student){
-        if (findStudentById(student.getID())!=null)
+        if (findStudentById(student.getID())==null)
         {
             enrolledStudents.add(student);
             return true;
@@ -58,7 +58,13 @@ public class Training {
     public void printToFile(){
         String fileName=String.format("%s_%s_%s.csv",course.getName(),startDate,endDate);
         try(PrintStream printStream= new PrintStream(fileName)){
-            printStream.println(this);
+            printStream.println(course.getName());
+            printStream.println(startDate);
+            printStream.println(endDate);
+            printStream.println(pricePerStudent);
+            for (Student enrolledStudent : enrolledStudents) {
+                printStream.println(enrolledStudent);
+            }
 
         }catch (FileNotFoundException e) {
             e.printStackTrace();
