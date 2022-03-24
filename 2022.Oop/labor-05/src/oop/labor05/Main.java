@@ -22,7 +22,7 @@ public class Main {
         for (Student student: students){
             System.out.println(student);
         }
-        ArrayList<Training> trainings = new ArrayList<>();;
+        ArrayList<Training> trainings = new ArrayList<>();
         MyDate startDate= new MyDate(2022,03,21);
         MyDate endDate= new MyDate(2022,03,25);
         for (Course course : courses){

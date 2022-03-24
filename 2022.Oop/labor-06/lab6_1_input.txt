@@ -1,0 +1,8 @@
+Customer, John, Black
+Account, 1000
+Account, 500
+Customer, Steve, Brown
+Customer, Mary, White
+Account, 1200
+Account, 300
+Account, 5000
