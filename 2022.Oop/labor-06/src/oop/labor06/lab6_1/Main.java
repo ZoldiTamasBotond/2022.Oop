@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-       /* ArrayList<BankAccount> bankAccounts=new ArrayList<>();
+        ArrayList<BankAccount> bankAccounts=new ArrayList<>();
         for (int i=0;i<200;i++){
             bankAccounts.add(new BankAccount());
         }
@@ -15,8 +15,17 @@ public class Main {
             System.out.println(bankAccount);
         }
 
-        */
-        System.out.println(readFromTXTFile("lab6_1_input.txt"));
+
+        ArrayList<Customer> customers=(readFromTXTFile("lab6_1_input.txt"));
+
+        Bank bank= new Bank("OTP");
+        for(Customer customer:customers) {
+            bank.addCustomer(customer);
+        }
+        System.out.println( bank.getCustomer(1));
+        bank.getCustomer(1).getBankAccount(bank.getCustomer(1).getNumAccounts()-1).deposit(100);
+        System.out.println( bank.getCustomer(1));
+        bank.printCustomersFile("bank_customers.csv");
     }
 
     public static ArrayList<Customer> readFromTXTFile(String fileName) {
