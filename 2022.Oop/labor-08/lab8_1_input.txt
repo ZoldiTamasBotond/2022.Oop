@@ -1,0 +1,8 @@
+Customer, John, Black
+CheckingAccount,100.8, 1000
+SavingsAccount,0.1, 500
+Customer, Steve, Brown
+Customer, Mary, White
+SavingsAccount,0.5, 1200
+SavingsAccount,0.02, 300
+CheckingAccount,300.7, 5000
